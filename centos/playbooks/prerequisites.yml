@@ -33,6 +33,7 @@
       rpm --import /etc/pki/rpm-gpg/RPM*
       rpm -ivh yum-3.4.3-167.el7.centos.noarch.rpm --force --nodeps 
     register: output
-
+    
+  - name: output of install yum on nodes
     debug: 
       msg: "{{ output }}"
