@@ -3,8 +3,8 @@
   tasks:
   - name: transfer data from ansible-master-nodes to kubernetes-master-nodes
     copy:
-      src=/home/ansible/downlaod/*
-      dest=/home/ansible/downlaod/
+      src: /home/ansible/downlaod/*
+      dest: /home/ansible/downlaod/
       delegate_to: kubernetes-master-nodes  
 
 - hosts: kubernetes-*
