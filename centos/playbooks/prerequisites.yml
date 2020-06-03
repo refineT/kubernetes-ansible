@@ -25,4 +25,5 @@
     register: output
 
   - name: output of install yum on nodes
-    command: echo {{ output.stdout }}
+    debug: 
+      msg: "{{ output }}"
