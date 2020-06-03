@@ -22,7 +22,7 @@
 
   - name: install yum on nodes
     shell:
-      cd /home/ansible/downlaod/
+      cd /home/ansible/download/
       rpm -ivh PackageKit-yum-plugin-1.1.10-2.el7.centos.x86_64.rpm
       rpm -ivh yum-langpacks-0.4.2-7.el7.noarch.rpm
       rpm -ivh yum-3.4.3-167.el7.centos.noarch.rpm
