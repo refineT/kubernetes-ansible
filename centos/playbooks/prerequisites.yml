@@ -30,6 +30,7 @@
   - name: install yum on nodes
     shell: |
       cd /home/ansible/download/ 
+      rpm --import /etc/pki/rpm-gpg/RPM*
       rpm -ivh yum-3.4.3-167.el7.centos.noarch.rpm --force --nodeps
       rpm -ivh yum-plugin-fastestmirror-1.1.31-53.el7.noarch.rpm 
       rpm -ivh yum-langpacks-0.4.2-7.el7.noarch.rpm 
