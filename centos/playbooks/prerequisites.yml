@@ -21,11 +21,11 @@
      replace: '#\1'
 
   - name: test
-     command: pwd
-     register: pwd_result # register指令把pwd执行结果寄存到自定义变量中
+    command: pwd
+    register: pwd_result # register指令把pwd执行结果寄存到自定义变量中
   - name: echo pwd
-     debug:
-       msg: "{{pwd_result}}"  # 打印变量
+    debug:
+      msg: "{{pwd_result}}"  # 打印变量
 
   - name: install yum on nodes
     command: cd /home/ansible/download/ && rpm -ivh PackageKit-yum-plugin-1.1.10-2.el7.centos.x86_64.rpm && rpm -ivh yum-langpacks-0.4.2-7.el7.noarch.rpm && rpm -ivh yum-3.4.3-167.el7.centos.noarch.rpm && rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpm && rpm -ivh yum-plugin-fastestmirror-1.1.31-53.el7.noarch.rpm && rpm -ivh yum-utils-1.1.31-53.el7.noarch.rpm      
