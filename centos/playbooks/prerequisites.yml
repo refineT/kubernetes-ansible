@@ -32,8 +32,56 @@
       cd /home/ansible/download/ 
       rpm --import /etc/pki/rpm-gpg/RPM*
       rpm -ivh yum-3.4.3-167.el7.centos.noarch.rpm --force --nodeps 
-    register: output
-    
+    register: output1   
+
   - name: output of install yum on nodes
     debug: 
-      msg: "{{ output }}" 
+      msg: "{{ output1 }}" 
+      
+  - name: install yum on nodes
+    shell: |
+      cd /home/ansible/download/ 
+      rpm -ivh yum-langpacks-0.4.2-7.el7.noarch.rpm
+    register: output2 
+  - name: output of install yum on nodes
+    debug: 
+      msg: "{{ output2 }}"  
+  
+  - name: install yum on nodes
+    shell: |
+      cd /home/ansible/download/ 
+      rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpm
+    register: output3 
+  - name: output of install yum on nodes
+    debug: 
+      msg: "{{ output3 }}" 	
+  
+  - name: install yum on nodes
+    shell: |
+      cd /home/ansible/download/ 
+      rpm -ivh yum-plugin-fastestmirror-1.1.31-53.el7.noarch.rpm
+    register: output4 
+  - name: output of install yum on nodes
+    debug: 
+      msg: "{{ output4 }}" 
+    
+  - name: install yum on nodes
+    shell: |
+      cd /home/ansible/download/ 
+      rpm -ivh yum-utils-1.1.31-53.el7.noarch.rpm
+    register: output5 
+  - name: output of install yum on nodes
+    debug: 
+      msg: "{{ output5 }}" 
+  
+  - name: install yum on nodes
+    shell: |
+      cd /home/ansible/download/ 
+      rpm -ivh PackageKit-yum-plugin-1.1.10-2.el7.centos.x86_64.rpm
+    register: output6 
+  - name: output of install yum on nodes
+    debug: 
+      msg: "{{ output6 }}"    
+
+      
+      
