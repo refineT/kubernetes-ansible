@@ -36,4 +36,4 @@
     
   - name: output of install yum on nodes
     debug: 
-      msg: "{{ output }}"
+      msg: "{{ output }}" 
