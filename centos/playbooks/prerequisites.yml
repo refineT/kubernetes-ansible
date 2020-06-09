@@ -26,7 +26,7 @@
   - name: echo pwd
     debug:
       msg: "{{pwd_result}}"  # 打印变量
-
+    
   - name: install yum on nodes
     shell: |
       cd /home/ansible/download/ 
@@ -47,10 +47,17 @@
     debug: 
       msg: "{{ output2 }}"  
   
-  - name: install yum-metadata on nodes
+  - name: check & install yum-metadata on nodes
     shell: |
-      cd /home/ansible/download/ 
-      rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpm
+      installed_rpm_metadata = `rpm -qa | grep yum-metadata-parser-1.1.4-10.el7.x86_64`
+      echo installed_rpm_metadata
+      if [installed_rpm == "yum-metadata-parser-1.1.4-10.el7.x86_64"]
+      then
+         cd /home/ansible/download/
+         rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpm
+      else
+         echo 'yum-metadata-parser-1.1.4-10.el7.x86_64 already INSTALLED!'
+      fi
     register: output3 
   - name: output of install yum-metadata on nodes
     debug: 
